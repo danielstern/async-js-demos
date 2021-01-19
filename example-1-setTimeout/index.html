@@ -1,0 +1,111 @@
+<head>
+
+    <style>
+
+        body {
+
+            text-align: center;
+            width: 700;
+            margin: auto;
+        }
+
+        td {
+
+            height: 200;
+            width: 200;
+            /* display: block; */
+            background-size: contain;
+        }
+
+        td:hover {
+
+            background-color: chartreuse;
+
+        }
+        .robot-1 {
+
+            background-image: url("img/circle.png");
+
+        }
+
+        .robot-2 {
+
+            background-image: url("img/square.png");
+
+        }           
+    </style>
+</head>
+<body>
+
+    <h1>
+        Are you a robot?
+    </h1>
+    <h2>
+        Click every picture of a square.
+    </h2>
+    <table>
+        <tbody>
+            <tr>
+                <td class="robot-1">
+
+                </td>
+                <td  class="robot-1">
+
+                </td>
+                <td class="robot-2">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="robot-2">
+
+                </td>
+                <td  class="robot-1">
+
+                </td>
+                <td class="robot-2">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="robot-1">
+
+                </td>
+                <td  class="robot-1">
+
+                </td>
+                <td class="robot-1">
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="handleCompleted()">Finished!</button>
+
+    <script>
+
+        let timeExpired = false;
+        let timeUntilExpiry = 3000;
+
+        setTimeout(function(){
+
+            console.error("Time has expired.");
+            timeExpired = true;
+
+        }, 3000);
+
+        window.handleCompleted = function(){
+
+            if (timeExpired) {
+
+                alert("Sorry, you took too long!");
+
+            } else {
+
+                alert("Good job, fellow human!");
+
+            }
+        }
+    </script>
+</body>

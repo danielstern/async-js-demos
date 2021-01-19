@@ -1,0 +1,150 @@
+<head>
+
+    <style>
+        body {
+
+            width: 720;
+            margin: auto;
+            margin-top: 36;
+            text-align: center;
+            background-color: lightskyblue;
+
+        }
+
+        h1 {
+
+            font-size: 48;
+            text-transform: uppercase;
+        }
+
+        table {
+
+            border-collapse: collapse;
+            margin-bottom: 36;
+
+        }
+
+        td {
+
+            text-align: center;
+            border: 1px solid gainsboro;
+            width: 30%;
+            padding: 12;
+            
+        }
+
+        .checkout {
+            width: 360;
+            font-size: 24;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        W&W Window Washers
+    </h1>
+    <h2>
+        These great products are recommended by Obadiah Window himself!
+    </h2>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <h3>
+                        Small Squeegee
+                    </h3>
+                    <p>
+                        $3.99
+                    </p>
+                    <button>
+                        Add to Cart
+                    </button>
+                </td>
+                <td>
+                    <h3>
+                        Washing Fluid (Medium)
+                    </h3>
+                    <p>
+                        $7.69
+                    </p>
+                    <button>
+                        Add to Cart
+                    </button>
+                </td>
+                <td>
+                    <h3>
+                        Antique Book Restoration Kit
+                    </h3>
+                    <p>
+                        $86.99
+                    </p>
+                    <button>
+                        Add to Cart
+                    </button>                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>
+                        Safety Harness
+                    </h3>
+                    <p>
+                        $44.99
+                    </p>
+                    <button disabled>
+                        Sold Out
+                    </button>
+                </td>
+                <td>
+                    <h3>
+                        Phonograph
+                    </h3>
+                    <p>
+                        $127.99
+                    </p>
+                    <button>
+                        Add to Cart
+                    </button>
+                </td>
+                <td>
+                    <h3>
+                        Overalls (Six-Armed)
+                    </h3>
+                    <p>
+                        $12.50
+                    </p>
+                    <button disabled>
+                        Sold Out
+                    </button>
+                    
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+        
+        </tr>
+    </table>
+
+    <button class="checkout">
+        Check Out
+    </button>
+
+    <script>
+
+        let mousePosition = null;
+
+        document.onmousemove = function ({screenX, screenY}) {
+            
+            mousePosition = {screenX, screenY};
+            // console.log(mousePosition);
+
+        };
+
+        setInterval(function(){
+
+            console.info("Reporting mouse position to analytics:", mousePosition.screenX, mousePosition.screenY)
+
+        }, 1000);
+    </script>
+</body>
