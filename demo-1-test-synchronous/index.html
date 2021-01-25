@@ -1,0 +1,38 @@
+<body>
+    <h2>
+        Open your console with <code>F12</code>. 
+    </h2>
+    <button onclick="test()">Run Test</button>
+    
+</body>
+<script>
+
+    function factor(n){
+
+        let k = [];
+        let o = performance.now();
+        for (let j = 0; j < n; j ++) {
+
+            if (n % j === 0) {
+
+                k = [... k, j]
+
+            }
+
+        }
+
+        console.info(`${n} has the following factors: ${k.join(', ')}`);
+        console.info(`Calculated in ${(performance.now() - o)}ms.`)
+
+    }
+
+    function test() {
+
+        for (let q of [10, 100, 1000, 10000, 100000, 1000000, 100000000]) {
+
+            factor(q);
+
+        }
+
+    }
+</script>

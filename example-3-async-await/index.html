@@ -1,0 +1,84 @@
+<head>
+
+    <title>
+        Window Washing Request Form
+    </title>
+
+    <style>
+        form > * {
+            display: block;
+            margin-bottom: 8;
+        }
+    </style>
+
+    
+</head>
+<body>
+    
+    <h1>
+        W&W Window Washers
+    </h1>
+    <h2>
+        Window Washing Request Form
+    </h2>
+
+    <form onsubmit="go()" name="purchaseForm">
+        <label>
+            Address
+            <input type="text" name="address">
+        </label>
+
+        <label>
+            Number of Windows
+            <input type="number">
+        </label>
+
+        <label>
+            Phone Number
+            <input type="text">
+        </label>
+
+        <label>
+            Credit Card
+            <input type="text" name="card">
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="ProgressMessage"></p>
+
+    <script>
+
+        window.go = async function(){
+
+            event.preventDefault();
+
+            const paymentResponse = await paymentAPI.makeRequest({creditCardNumber: document.forms.purchaseForm.elements["card"].value});
+
+            if (!paymentResponse.success) {
+
+                document.querySelector("#ProgressMessage").innerHTML = "Your credit card was not accepted";
+                return;
+
+            }
+
+            const supplierResponse =    await supplierAPI.makeRequest({transactionId: paymentResponse.transactionId});
+
+            if (!supplierResponse.success) {
+
+                document.querySelector("#ProgressMessage").innerHTML = "We couldn't find any availability.";
+                return;
+
+            }
+
+            document.querySelector("#ProgressMessage").innerHTML = "Thank you!";
+
+            
+
+
+        }
+    </script>
+
+    <script src="vendor.js"></script>
+</body>
