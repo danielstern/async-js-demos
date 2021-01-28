@@ -1,0 +1,74 @@
+<head>
+
+    <script src="vendor.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Window Washing and Other Services</h1>
+        <h2>Talk to a Sales Rep Online!</h2>
+    </div>
+
+    <div id="ChatWindow">
+        <p>
+            Malachi: Hello this is Malachi.
+        </p>
+    </div>
+
+    <script>
+
+        // let g = asyncGen();
+
+        (async function(){
+
+            for await (value of asyncGen()) {
+
+                console.log(value);ChatWindow.innerHTML += `<p>Malachi: ${value}</p>`
+                
+                // console.log(await g);
+
+            }
+
+        })();
+
+        // let latestMessage = latestMessageGenerator();
+        // (async function(){
+
+
+
+        // });
+
+        // setInterval(function(){
+
+
+        // }, 500);
+
+        // function* apiMessageGenerator(){
+
+        //     // while (true) {
+
+        //     //     yield delay(100);
+
+        //     //     let latestMessage = yield getLatestMessage();
+        //     //     console.log("Latest>",  latest);
+        //     //     yield latestMessage;
+
+        //     // }
+
+        // }
+
+        // // const gen = apiMessageGenerator();
+        // // gen.next();
+
+        // // console.log("Running code");
+        // for (let message of gen()) {
+
+        //     console.log(message);
+
+        // }
+
+        // // (function*(){
+
+            
+        // })();
+    </script>
+</body>
